@@ -1,0 +1,14 @@
+D:\Karaokay\Karaokay\bin\Debug\Karaokay.exe.config
+D:\Karaokay\Karaokay\bin\Debug\Karaokay.exe
+D:\Karaokay\Karaokay\bin\Debug\Karaokay.pdb
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.csproj.AssemblyReference.cache
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.csproj.SuggestedBindingRedirects.cache
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.Properties.Resources.resources
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.csproj.GenerateResource.cache
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.csproj.CoreCompileInputs.cache
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.exe
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.pdb
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.Login.resources
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.TableManager.resources
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.AccountProfile.resources
+D:\Karaokay\Karaokay\obj\Debug\Karaokay.Admin.resources
