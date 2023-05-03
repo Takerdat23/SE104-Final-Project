@@ -21,3 +21,32 @@ D:\Karaokay 2\Wpf_Karaokay\obj\Debug\Wpf_Karaokay.csproj.CoreCompileInputs.cache
 D:\Karaokay 2\Wpf_Karaokay\obj\Debug\Wpf_Karaokay.csproj.CopyComplete
 D:\Karaokay 2\Wpf_Karaokay\obj\Debug\Wpf_Karaokay.exe
 D:\Karaokay 2\Wpf_Karaokay\obj\Debug\Wpf_Karaokay.pdb
+D:\C#.NET\newproject\bin\Debug\Wpf_Karaokay.exe.config
+D:\C#.NET\newproject\bin\Debug\Wpf_Karaokay.exe
+D:\C#.NET\newproject\bin\Debug\Wpf_Karaokay.pdb
+D:\C#.NET\newproject\bin\Debug\MaterialDesignColors.dll
+D:\C#.NET\newproject\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\C#.NET\newproject\bin\Debug\MaterialDesignColors.pdb
+D:\C#.NET\newproject\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\C#.NET\newproject\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.csproj.AssemblyReference.cache
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.csproj.SuggestedBindingRedirects.cache
+D:\C#.NET\newproject\obj\Debug\MainWindow.g.cs
+D:\C#.NET\newproject\obj\Debug\ManagerForm.g.cs
+D:\C#.NET\newproject\obj\Debug\App.g.cs
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay_MarkupCompile.cache
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay_MarkupCompile.lref
+D:\C#.NET\newproject\obj\Debug\App.baml
+D:\C#.NET\newproject\obj\Debug\MainWindow.baml
+D:\C#.NET\newproject\obj\Debug\ManagerForm.baml
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.g.resources
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.Properties.Resources.resources
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.csproj.GenerateResource.cache
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.csproj.CoreCompileInputs.cache
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.csproj.CopyComplete
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.exe
+D:\C#.NET\newproject\obj\Debug\Wpf_Karaokay.pdb
+D:\C#.NET\newproject\obj\Debug\RoomManager.g.cs
+D:\C#.NET\newproject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C#.NET\newproject\obj\Debug\ResourceXAML\MainResource.baml
+D:\C#.NET\newproject\obj\Debug\RoomManager.baml
