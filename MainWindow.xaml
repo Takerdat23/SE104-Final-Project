@@ -11,7 +11,9 @@
         Background="#FFF6F7"
         AllowsTransparency="True"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        DataContext="{DynamicResource MainVM}"> 
+    
     
     
     <materialDesign:Card UniformCornerRadius="15" 

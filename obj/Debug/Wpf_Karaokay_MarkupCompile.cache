@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Karaokay 2\Wpf_Karaokay\obj\Debug\
+D:\C#.NET\newproject\obj\Debug\
 Wpf_Karaokay
 none
 false
 DEBUG;TRACE
-D:\Karaokay 2\Wpf_Karaokay\App.xaml
-1219584333
+D:\C#.NET\newproject\App.xaml
+41125163353
 
-6-502434485
-151185637204
-MainWindow.xaml;
+10630598248
+15231391970
+MainWindow.xaml;ManagerForm.xaml;ResourceXAML\MainResource.xaml;RoomManager.xaml;
 
 True
 
