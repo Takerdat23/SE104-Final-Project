@@ -10,18 +10,53 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 
-namespace WPF_Karaokay
+namespace Wpf_Karaokay
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class LoginWindow : Window
     {
         public LoginWindow()
+        { }
+
+        public bool IsDarkTheme { get; set; }
+
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+
+        private void toggleTheme(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
+        }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
