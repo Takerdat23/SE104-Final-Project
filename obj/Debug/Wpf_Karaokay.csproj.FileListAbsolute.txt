@@ -50,3 +50,20 @@ D:\C#.NET\newproject\obj\Debug\RoomManager.g.cs
 D:\C#.NET\newproject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\C#.NET\newproject\obj\Debug\ResourceXAML\MainResource.baml
 D:\C#.NET\newproject\obj\Debug\RoomManager.baml
+D:\github karaokay\SE104-Final-Project\obj\Debug\Wpf_Karaokay.csproj.AssemblyReference.cache
+D:\github karaokay\SE104-Final-Project\obj\Debug\Wpf_Karaokay.csproj.SuggestedBindingRedirects.cache
+D:\github karaokay\SE104-Final-Project\obj\Debug\AddMenu.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\AddRoom.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\CashierPage.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\EditMenu.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\EditRoom.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\MainWindow.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\ManagerForm.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\MenuManager.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\RoomManager.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\App.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\github karaokay\SE104-Final-Project\obj\Debug\Wpf_Karaokay_MarkupCompile.cache
+D:\github karaokay\SE104-Final-Project\obj\Debug\Wpf_Karaokay_MarkupCompile.lref
+D:\github karaokay\SE104-Final-Project\obj\Debug\Wpf_Karaokay.exe
+D:\github karaokay\SE104-Final-Project\obj\Debug\Wpf_Karaokay.pdb
