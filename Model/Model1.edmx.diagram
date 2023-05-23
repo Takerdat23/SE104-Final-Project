@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2e1b5f826e0847cbb3b9cee09e38a665" Name="Diagram1">
+        <EntityTypeShape EntityType="KaraOkayModel.Account" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaraOkayModel.bill" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaraOkayModel.Employee" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaraOkayModel.Items" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaraOkayModel.reports" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaraOkayModel.Room" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaraOkayModel.BillDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="KaraOkayModel.FK__Employee__Accoun__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="KaraOkayModel.FK__bill__RmId__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="KaraOkayModel.FK__BillDetai__BillI__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="KaraOkayModel.FK__reports__BillId__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="KaraOkayModel.FK__BillDetai__Order__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
