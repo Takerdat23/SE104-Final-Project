@@ -21,7 +21,7 @@
             
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
             Style="{StaticResource MaterialDesignRaisedLightButton}"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,41,0,0" Grid.Row="1" HorizontalAlignment="Center" Width="188" Height="55" VerticalAlignment="Top" Click="Button_Click" Background="#FFFEBD25" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,41,0,0" Grid.Row="1" HorizontalAlignment="Center" Width="188" Height="55" VerticalAlignment="Top"  Background="#FFFEBD25" Grid.Column="1">
             <TextBlock
                 Text="Add" FontFamily="Gill Sans MT" FontSize="25" />
         </Button>
@@ -29,7 +29,7 @@
             
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
             Style="{StaticResource MaterialDesignRaisedLightButton}"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,148,0,0" Grid.Row="1" HorizontalAlignment="Center" Width="188" Height="58" VerticalAlignment="Top" Click="Button_Click" Background="#FFFEBD25" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,148,0,0" Grid.Row="1" HorizontalAlignment="Center" Width="188" Height="58" VerticalAlignment="Top"  Background="#FFFEBD25" Grid.Column="1">
             <TextBlock
                 Text="Delete" FontFamily="Gill Sans MT" FontSize="25" />
         </Button>
@@ -37,7 +37,7 @@
             
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
             Style="{StaticResource MaterialDesignRaisedLightButton}"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,254,0,0" Grid.Row="1" HorizontalAlignment="Center" Width="188" Height="54" VerticalAlignment="Top" Click="Button_Click" Background="#FFFEBD25" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,254,0,0" Grid.Row="1" HorizontalAlignment="Center" Width="188" Height="54" VerticalAlignment="Top" Background="#FFFEBD25" Grid.Column="1">
             <TextBlock
                 Text="Edit" FontFamily="Gill Sans MT" FontSize="25" />
         </Button>

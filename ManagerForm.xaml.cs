@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Wpf_Karaokay.ViewModel;
 
 namespace Wpf_Karaokay
 {
@@ -22,11 +23,9 @@ namespace Wpf_Karaokay
         public ManagerForm()
         {
             InitializeComponent();
+            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

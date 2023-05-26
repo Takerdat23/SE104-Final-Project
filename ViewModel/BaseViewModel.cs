@@ -5,56 +5,230 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Windows;
 using System.Windows.Input;
-
-// đây là base view model dùng để thực hiện các command cho data binding, chỉ cần đổi tên namespace lại thành tên project 
-// lớp này sẽ được kế thừa cho main view model 
+using Wpf_Karaokay.Model;
 
 namespace Wpf_Karaokay.ViewModel
 {
+
+    //define the class for navigation 
+    public class TimerService
+    {
+        private Dictionary<Room, Task> _roomTasks;
+        private CancellationTokenSource _cancellationTokenSource;
+
+        public TimerService()
+        {
+            _roomTasks = new Dictionary<Room, Task>();
+            _cancellationTokenSource = new CancellationTokenSource();
+        }
+
+        public void StartTimer(Room room)
+        {
+            if (!_roomTasks.ContainsKey(room))
+            {
+                CancellationToken cancellationToken = _cancellationTokenSource.Token;
+                Task task = Task.Run(() => TimerTask(room, cancellationToken), cancellationToken);
+                _roomTasks.Add(room, task);
+            }
+        }
+
+        public void StopTimer(Room room)
+        {
+            if (_roomTasks.TryGetValue(room, out Task task))
+            {
+                _cancellationTokenSource.Cancel();
+                _roomTasks.Remove(room);
+            }
+        }
+
+        private void TimerTask(Room room, CancellationToken cancellationToken)
+        {
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                // Perform actions specific to the room's timer tick event
+               
+
+                // Update UI or perform other actions based on the elapsed time
+
+                // Sleep for 1 second
+                Task.Delay(TimeSpan.FromSeconds(1)).Wait();
+            }
+        }
+    }
+    public interface INavigationService
+    {
+        void RegisterWindow(string windowKey, Type windowType, object viewModel);
+        void RegisterPage(string pageKey, Type pageType, object viewModel);
+        void NavigateToWindow(string windowKey);
+        void NavigateToPage(string pageKey);
+        void GoBack();
+    }
+
+    public class NavigationService : INavigationService
+    {
+        private Dictionary<string, (Type windowType, object viewModel)> _windows;
+        private Dictionary<string, (Type pageType, object viewModel)> _pages;
+        private Stack<Window> _windowStack;
+
+        public NavigationService()
+        {
+            _windows = new Dictionary<string, (Type windowType, object viewModel)>();
+            _pages = new Dictionary<string, (Type pageType, object viewModel)>();
+            _windowStack = new Stack<Window>();
+        }
+
+        public void RegisterWindow(string windowKey, Type windowType, object viewModel)
+        {
+            if (!_windows.ContainsKey(windowKey))
+                _windows.Add(windowKey, (windowType, viewModel));
+        }
+
+        public void RegisterPage(string pageKey, Type pageType, object viewModel)
+        {
+            if (!_pages.ContainsKey(pageKey))
+                _pages.Add(pageKey, (pageType, viewModel));
+        }
+
+        public void NavigateToWindow(string windowKey)
+        {
+            if (_windows.TryGetValue(windowKey, out (Type windowType, object viewModel) windowInfo))
+            {
+                ClosePreviousWindow();
+
+                Window window = Activator.CreateInstance(windowInfo.windowType) as Window;
+                window.DataContext = windowInfo.viewModel;
+                _windowStack.Push(window);
+                window.Show();
+            }
+        }
+
+        public void NavigateToPage(string pageKey)
+        {
+            if (_pages.TryGetValue(pageKey, out (Type pageType, object viewModel) pageInfo))
+            {
+                
+                
+                Window currentWindow = GetCurrentWindow();
+                currentWindow.Content = Activator.CreateInstance(pageInfo.pageType);
+                (currentWindow.Content as FrameworkElement).DataContext = pageInfo.viewModel;
+                
+            }
+        }
+
+        public void GoBack()
+        {
+            if (_windowStack.Count > 1)
+            {
+                _windowStack.Pop().Close();
+                Window previousWindow = _windowStack.Peek();
+                previousWindow.Show();
+            }
+        }
+
+        private void ClosePreviousWindow()
+        {
+            if (_windowStack.Count > 0)
+            {
+                Window previousWindow = _windowStack.Pop();
+                previousWindow.Close();
+            }
+        }
+
+        private Window GetCurrentWindow()
+        {
+            return _windowStack.Peek();
+        }
+    }
+
+    //Define the class for the Timer 
+
     public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        protected static NavigationService NavigationService { get; } = new NavigationService();
+
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-    class RelayCommand<T> : ICommand
+
+   
+   
+    public class RelayCommand<T> : ICommand
     {
-        private readonly Predicate<T> _canExecute;
-        private readonly Action<T> _execute;
+        private readonly Action<T> execute;
+        private readonly Func<T, bool> canExecute;
 
-        public RelayCommand(Predicate<T> canExecute, Action<T> execute)
+        public RelayCommand(Action<T> execute)
+            : this(execute, null)
         {
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-            _canExecute = canExecute;
-            _execute = execute;
         }
 
-        public bool CanExecute(object parameter)
+        public RelayCommand(Action<T> execute, Func<T, bool> canExecute)
         {
-            try
-            {
-                return _canExecute == null ? true : _canExecute((T)parameter);
-            }
-            catch
-            {
-                return true;
-            }
-        }
-
-        public void Execute(object parameter)
-        {
-            _execute((T)parameter);
+            this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
+            this.canExecute = canExecute;
         }
 
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            if (parameter is T typedParameter)
+            {
+                return canExecute == null || canExecute(typedParameter);
+            }
+
+            return canExecute == null || canExecute(default(T));
+        }
+
+        public void Execute(object parameter)
+        {
+            if (parameter is T typedParameter)
+            {
+                execute(typedParameter);
+            }
+            else
+            {
+                execute(default(T));
+            }
+        }
+    }
+
+    public class RelayCommand : ICommand
+    {
+        private Action<object> execute;
+        private Func<object, bool> canExecute;
+
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        {
+            this.execute = execute;
+            this.canExecute = canExecute;
+        }
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return canExecute == null || canExecute(parameter);
+        }
+
+        public void Execute(object parameter)
+        {
+            execute(parameter);
         }
     }
 }
